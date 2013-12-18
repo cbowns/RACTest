@@ -10,8 +10,7 @@
 
 @interface MPSTicker ()
 
-@property (nonatomic, strong) RACSignal *tickSignal;
-@property (nonatomic, strong) RACSignal *enabledSignal;
+@property (nonatomic, strong) RACSignal *accumulateSignal;
 
 @end
 
@@ -21,20 +20,15 @@
 {
     self = [super init];
     if (self) {
-		// Create our tick signal.
-		_tickSignal = [RACSignal interval:1 onScheduler:[RACScheduler mainThreadScheduler]];
+		// Create our accumulate signal.
+		_accumulateSignal = [RACSignal interval:1 onScheduler:[RACScheduler scheduler]];
     }
     return self;
 }
 
-- (RACSignal *)tickSignal
+- (RACSignal *)accumulateSignal
 {
-	return _tickSignal;
-}
-
-- (RACSignal *)enabledSignal
-{
-	return _enabledSignal;
+	return _accumulateSignal;
 }
 
 @end

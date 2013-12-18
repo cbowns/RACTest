@@ -151,12 +151,11 @@
 		E534762D1856B7DF00D02431 /* RACTest */ = {
 			isa = PBXGroup;
 			children = (
-				E53476361856B7DF00D02431 /* MPSAppDelegate.h */,
-				E53476371856B7DF00D02431 /* MPSAppDelegate.m */,
 				E53476391856B7DF00D02431 /* Main.storyboard */,
-				E52E5918186124E900071D76 /* ViewController */,
-				E52E5917186124E500071D76 /* ViewModel */,
+				E5CFCAA41862648D0057B420 /* App Delegate */,
 				E52E5916186124DF00071D76 /* Ticker */,
+				E52E5917186124E500071D76 /* ViewModel */,
+				E52E5918186124E900071D76 /* ViewController */,
 				E534763F1856B7DF00D02431 /* Images.xcassets */,
 				E534762E1856B7DF00D02431 /* Supporting Files */,
 			);
@@ -190,6 +189,15 @@
 				E534764F1856B7DF00D02431 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5CFCAA41862648D0057B420 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				E53476361856B7DF00D02431 /* MPSAppDelegate.h */,
+				E53476371856B7DF00D02431 /* MPSAppDelegate.m */,
+			);
+			name = "App Delegate";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

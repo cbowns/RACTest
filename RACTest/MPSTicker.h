@@ -10,14 +10,13 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-/// MPSTicker provides two signals:
-/// A @c tick signal that increments a counter once per second
-/// An @c enabled signal that allows @c tick to increase or hold value.
+/// MPSTicker provides several signals:
+/// A @c accumulate signal that adds one to its previous value.
+/// A @c enabled signal that controls whether accumulate adds or not.
+/// A @c tick signal generated once per second that automatically increments acculumate.
 
 @interface MPSTicker : NSObject
 
-- (RACSignal *)tickSignal;
-
-- (RACSignal *)enabledSignal;
+- (RACSignal *)accumulateSignal;
 
 @end
