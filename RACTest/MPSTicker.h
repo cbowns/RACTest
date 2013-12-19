@@ -13,7 +13,6 @@
 /// MPSTicker provides several signals:
 /// A @c accumulate signal that adds one to its previous value.
 /// A @c enabled signal that controls whether accumulate adds or not.
-/// A @c tick signal generated once per second that automatically increments acculumate.
 
 @interface MPSTicker : NSObject
 

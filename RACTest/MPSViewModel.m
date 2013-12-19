@@ -17,8 +17,8 @@
 
 @property (nonatomic, strong) MPSTicker *ticker;
 
-/// The time string, readwrite.
-@property (nonatomic, strong, readwrite) NSString *timeString;
+/// The accumulated string, readwrite.
+@property (nonatomic, strong, readwrite) NSString *tickString;
 
 @end
 
@@ -31,12 +31,20 @@
 		// Set up our MPSTicker.
 		_ticker = [[MPSTicker alloc] init];
 
-		// Subscribe to its next value.
+		// Subscribe to its values.
 		@weakify(self);
-		[_ticker.tickSignal subscribeNext:^(id obj) {
+		[[[_ticker accumulateSignal]
+		  // Start with 0, since we don't send a zero-th tick.
+		  startWith:@(0)]
+		 subscribeNext:^(NSNumber *tick) {
 			@strongify(self);
-			self.timeString = [obj description];
-			NSLog(@"%s x: %@", __func__, obj);
+			// Unpack the value and format our string for the UI.
+			NSUInteger count = 0;
+			if (tick) {
+				count = tick.unsignedIntegerValue;
+			}
+			NSString *formattedString = [NSString stringWithFormat:@"%i tick%@ since launch", count, (count != 1 ? @"s" : @"")];
+			self.tickString = formattedString;
 		}];
 	}
 	return self;

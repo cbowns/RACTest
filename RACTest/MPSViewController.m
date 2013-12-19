@@ -69,15 +69,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
+	// Bind our label's text to the viewmodel's label string,
+	// and make sure to deliver signals on the main thread.
+	RAC(self.currentTimeLabel, text) = [RACObserve(self.viewModel, tickString) deliverOn:[RACScheduler mainThreadScheduler]];
+
 	// Set up our RAC signals.
 	// 1. Bind the button to the label to simply display whether it's running or not.
 	[[self.startStopButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 	 subscribeNext:^(id x) {
 		 NSLog(@"%s x: %@", __func__, x);
 	 }];
-
-	// Bind our label's text to the viewmodel's label string.
-	RAC(self.currentTimeLabel, text) = RACObserve(self.viewModel, timeString);
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,15 +10,15 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-// A ViewModel that models a timer ticking once per second to reflect the time since app launch.
+// A ViewModel that models a timer ticking once per second to reflect value ticks since app launch.
 // Also exposes a property to pause tick updates.
 
 @interface MPSViewModel : NSObject
 
-/// The time string.
-@property (nonatomic, strong, readonly) NSString *timeString;
+/// The tick string.
+@property (nonatomic, strong, readonly) NSString *tickString;
 
 /// A @c BOOL that controls whether the time string is being updated.
-@property (nonatomic, assign, getter = isPaused) BOOL paused;
+//@property (nonatomic, assign, getter = isPaused) BOOL paused;
 
 @end
