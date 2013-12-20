@@ -22,6 +22,6 @@
 @property (nonatomic, strong, readonly) NSString *tickStateString;
 
 /// A @c BOOL that controls whether the tick string is being updated.
-@property (nonatomic, assign, getter = isPaused) BOOL paused;
+@property (nonatomic, assign) BOOL paused;
 
 @end

@@ -42,7 +42,7 @@ static NSUInteger const kAccumulationDisabled = 0;
 		@weakify(self);
 		_accumulateSignal = [_tickSignal scanWithStart:@(0) reduce:^id(NSNumber *previous, id next) {
 			@strongify(self);
-			NSUInteger accumulation = (self.isAccumulateEnabled ? kAccumulationEnabled : kAccumulationDisabled);
+			NSUInteger accumulation = (self.accumulateEnabled ? kAccumulationEnabled : kAccumulationDisabled);
 			// On each tick, we add one to the previous value of the accumulate signal.
 			return @(previous.unsignedIntegerValue + accumulation);
 		}];

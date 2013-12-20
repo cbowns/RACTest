@@ -19,6 +19,6 @@
 - (RACSignal *)accumulateSignal;
 
 /// A @c BOOL to control whether or not accumulation is active.
-@property (nonatomic, assign, getter = isAccumulateEnabled) BOOL accumulateEnabled;
+@property (nonatomic, assign) BOOL accumulateEnabled;
 
 @end
