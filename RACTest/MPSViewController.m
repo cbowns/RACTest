@@ -32,7 +32,6 @@
 {
 	// Custom initialization goes here:
 	_viewModel = [[MPSViewModel alloc] init];
-
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -64,19 +63,21 @@
 
 #pragma mark - View lifecycle
 
+/// Binds RAC signals from the viewmodel to views.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 
-	// Bind our label's text to the viewmodel's label string,
-	// and make sure to deliver signals on the main thread.
-	RAC(self.currentTimeLabel, text) = [RACObserve(self.viewModel, tickString) deliverOn:[RACScheduler mainThreadScheduler]];
+	// Bind our label's text to the viewmodel's label string.
+	RAC(self.currentTimeLabel, text) = RACObserve(self.viewModel, tickString);
 
-	// Set up our RAC signals.
-	// 1. Bind the button to the label to simply display whether it's running or not.
+	// Map our button's label text to the viewModel's state string.
+	RAC(self.startStopButton.titleLabel, text) = RACObserve(self.viewModel, tickStateString);
+
+	// Bind the button presses up to the viewmodel's paused property.
 	[[self.startStopButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 	 subscribeNext:^(id x) {
+
 		 NSLog(@"%s x: %@", __func__, x);
 	 }];
 }

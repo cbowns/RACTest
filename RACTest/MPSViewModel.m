@@ -13,12 +13,16 @@
 
 #import "MPSTicker.h"
 
+static NSString * const kStopTickString = @"Stop Tick";
+static NSString * const kStartTickString = @"Start Tick";
+
 @interface MPSViewModel ()
 
 @property (nonatomic, strong) MPSTicker *ticker;
 
-/// The accumulated string, readwrite.
+// Redeclared as readwrite:
 @property (nonatomic, strong, readwrite) NSString *tickString;
+@property (nonatomic, strong, readwrite) NSString *tickStateString;
 
 @end
 
@@ -31,20 +35,34 @@
 		// Set up our MPSTicker.
 		_ticker = [[MPSTicker alloc] init];
 
-		// Subscribe to its values.
+		// Weakify the self for the below subscribe: blocks.
 		@weakify(self);
-		[[[_ticker accumulateSignal]
-		  // Start with 0, since we don't send a zero-th tick.
+
+		// Map the ticker's accumulate signal to our tickString.
+		// Deliver this signal on the main thread since we're a view model.
+		[[[[_ticker accumulateSignal] deliverOn:[RACScheduler mainThreadScheduler]]
+		  // Start with 0.
 		  startWith:@(0)]
 		 subscribeNext:^(NSNumber *tick) {
 			@strongify(self);
 			// Unpack the value and format our string for the UI.
-			NSUInteger count = 0;
-			if (tick) {
-				count = tick.unsignedIntegerValue;
-			}
+			 NSUInteger count = tick.unsignedIntegerValue;
 			NSString *formattedString = [NSString stringWithFormat:@"%i tick%@ since launch", count, (count != 1 ? @"s" : @"")];
 			self.tickString = formattedString;
+		}];
+
+
+		// Map the ticker's isAccumulationEnabled property to self.isPaused.
+		RAC(self, paused) = [RACChannelTo(_ticker, accumulateEnabled) deliverOn:[RACScheduler mainThreadScheduler]];
+
+
+		// Observe the accumulate enabled property and update the UI-facing string for what actions are available.
+		[[[RACObserve(_ticker, accumulateEnabled) deliverOn:[RACScheduler mainThreadScheduler]]
+		  // Start with the stop tick string.
+		  startWith:kStopTickString]
+		 subscribeNext:^(NSNumber *enabled) {
+			 @strongify(self);
+			 self.tickStateString = (enabled.boolValue ? kStopTickString : kStartTickString);
 		}];
 	}
 	return self;

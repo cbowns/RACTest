@@ -12,10 +12,13 @@
 
 /// MPSTicker provides several signals:
 /// A @c accumulate signal that adds one to its previous value.
-/// A @c enabled signal that controls whether accumulate adds or not.
 
 @interface MPSTicker : NSObject
 
+/// A signal producing increasing NSNumbers.
 - (RACSignal *)accumulateSignal;
+
+/// A @c BOOL to control whether or not accumulation is active.
+@property (nonatomic, assign, getter = isAccumulateEnabled) BOOL accumulateEnabled;
 
 @end

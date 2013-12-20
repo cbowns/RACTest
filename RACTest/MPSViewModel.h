@@ -18,7 +18,10 @@
 /// The tick string.
 @property (nonatomic, strong, readonly) NSString *tickString;
 
-/// A @c BOOL that controls whether the time string is being updated.
-//@property (nonatomic, assign, getter = isPaused) BOOL paused;
+/// The tick state string.
+@property (nonatomic, strong, readonly) NSString *tickStateString;
+
+/// A @c BOOL that controls whether the tick string is being updated.
+@property (nonatomic, assign, getter = isPaused) BOOL paused;
 
 @end
