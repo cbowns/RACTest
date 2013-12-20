@@ -45,10 +45,10 @@ static NSString * const kStartTickString = @"Start Tick";
 		  startWith:@(0)]
 		 subscribeNext:^(NSNumber *tick) {
 			@strongify(self);
-			// Unpack the value and format our string for the UI.
+			 // Unpack the value and format our string for the UI.
 			 NSUInteger count = tick.unsignedIntegerValue;
-			NSString *formattedString = [NSString stringWithFormat:@"%i tick%@ since launch", count, (count != 1 ? @"s" : @"")];
-			self.tickString = formattedString;
+			 NSString *formattedString = [NSString stringWithFormat:@"%i tick%@ since launch", count, (count != 1 ? @"s" : @"")];
+			 self.tickString = formattedString;
 		}];
 
 
