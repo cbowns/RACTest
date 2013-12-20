@@ -9,6 +9,7 @@
 #import "MPSViewController.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
 
 // ViewModel:
 #import "MPSViewModel.h"
@@ -74,11 +75,13 @@
 	// Map our button's label text to the viewModel's state string.
 	RAC(self.startStopButton.titleLabel, text) = RACObserve(self.viewModel, tickStateString);
 
-	// Bind the button presses up to the viewmodel's paused property.
+	// Bind the button to toggle the viewmodel's paused property.
+	@weakify(self);
 	[[self.startStopButton rac_signalForControlEvents:UIControlEventTouchUpInside]
 	 subscribeNext:^(id x) {
-
-		 NSLog(@"%s x: %@", __func__, x);
+		 @strongify(self);
+		 // Flip the view model's paused bool.
+		 self.viewModel.paused = !self.viewModel.paused;
 	 }];
 }
 
