@@ -53,7 +53,7 @@ static NSString * const kStartTickString = @"Start Tick";
 
 
 		// Map the ticker's isAccumulationEnabled property to self.isPaused.
-		RAC(self, paused) = [RACChannelTo(_ticker, accumulateEnabled) deliverOn:[RACScheduler mainThreadScheduler]];
+		RACChannelTo(self, paused) = RACChannelTo(_ticker, accumulateEnabled);
 
 
 		// Observe the accumulate enabled property and update the UI-facing string for what actions are available.
