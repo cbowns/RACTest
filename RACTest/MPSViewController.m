@@ -73,7 +73,10 @@
 	RAC(self.currentTimeLabel, text) = RACObserve(self.viewModel, tickString);
 
 	// Map our button's label text to the viewModel's state string.
-	RAC(self.startStopButton.titleLabel, text) = RACObserve(self.viewModel, tickStateString);
+	[RACObserve(self.viewModel, tickStateString) subscribeNext:^(id x) {
+		[self.startStopButton setTitle:x forState:UIControlStateNormal];
+	}];
+
 
 	// Bind the button to toggle the viewmodel's paused property.
 	@weakify(self);
