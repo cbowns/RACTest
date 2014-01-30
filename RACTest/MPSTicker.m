@@ -27,14 +27,12 @@ static NSUInteger const kAccumulationDisabled = 0;
 
 @implementation MPSTicker
 
-- (id)init
+- (instancetype)initWithTickSource:(RACSignal *)tickSource
 {
     self = [super init];
     if (self) {
-		// Create our tick signal.
-		// [todo] - Create a non-time-driven tick signal for testing.
-		// This will let you drive the ticker at a chosen pace, rather than at one tied to a wall clock.
-		_tickSignal = [RACSignal interval:1 onScheduler:[RACScheduler scheduler]];
+		// Save the passed tickSource as our tick signal.
+		_tickSignal = tickSource;
 
 		/*
 		 The accumulate signal takes the tick signal and conditionally adds one to its previous value.
@@ -55,6 +53,12 @@ static NSUInteger const kAccumulationDisabled = 0;
 		_accumulateEnabled = YES;
 	}
     return self;
+}
+
+- (id)init
+{
+	RACSignal *timedTickSource = [RACSignal interval:1 onScheduler:[RACScheduler scheduler]];
+	return [self initWithTickSource:timedTickSource];
 }
 
 - (RACSignal *)accumulateSignal
