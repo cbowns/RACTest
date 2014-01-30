@@ -47,7 +47,7 @@ static NSString * const kStartTickString = @"Start Tick";
 			@strongify(self);
 			 // Unpack the value and format our string for the UI.
 			 NSUInteger count = tick.unsignedIntegerValue;
-			 NSString *formattedString = [NSString stringWithFormat:@"%i tick%@ since launch", count, (count != 1 ? @"s" : @"")];
+			 NSString *formattedString = [NSString stringWithFormat:@"%lu tick%@ since launch", (unsigned long)count, (count != 1 ? @"s" : @"")];
 			 self.tickString = formattedString;
 		}];
 
