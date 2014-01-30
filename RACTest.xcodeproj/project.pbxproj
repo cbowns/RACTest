@@ -126,6 +126,7 @@
 				5A2F6586DCD94238BF15590B /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		E53476251856B7DF00D02431 /* Products */ = {
 			isa = PBXGroup;
