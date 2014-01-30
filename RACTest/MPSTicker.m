@@ -32,6 +32,8 @@ static NSUInteger const kAccumulationDisabled = 0;
     self = [super init];
     if (self) {
 		// Create our tick signal.
+		// [todo] - Create a non-time-driven tick signal for testing.
+		// This will let you drive the ticker at a chosen pace, rather than at one tied to a wall clock.
 		_tickSignal = [RACSignal interval:1 onScheduler:[RACScheduler scheduler]];
 
 		/*
