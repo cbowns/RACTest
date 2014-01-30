@@ -16,16 +16,18 @@ static NSUInteger const kAccumulationDisabled = 0;
 
 @interface MPSTicker ()
 
-/// A private @c tick signal that generates an event once per second.
+/// A private @c tick signal. By default, generates an event once per second.
 /// This signal is an input to @c accumulateSignal.
 @property (nonatomic, strong) RACSignal *tickSignal;
 
-/// A public read-only signal for the accumulator.
-@property (nonatomic, strong) RACSignal *accumulateSignal;
+/// The public property for the  accumulation signal, redeclared readwrite.
+@property (nonatomic, strong, readwrite) RACSignal *accumulateSignal;
 
 @end
 
 @implementation MPSTicker
+
+#pragma mark - Initialization
 
 - (instancetype)initWithTickSource:(RACSignal *)tickSource
 {
@@ -59,11 +61,6 @@ static NSUInteger const kAccumulationDisabled = 0;
 {
 	RACSignal *timedTickSource = [RACSignal interval:1 onScheduler:[RACScheduler scheduler]];
 	return [self initWithTickSource:timedTickSource];
-}
-
-- (RACSignal *)accumulateSignal
-{
-	return _accumulateSignal;
 }
 
 @end

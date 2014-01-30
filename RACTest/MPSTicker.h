@@ -24,9 +24,9 @@
 - (instancetype)init;
 
 /// A signal producing increasing NSNumbers.
-- (RACSignal *)accumulateSignal;
+@property (nonatomic, strong, readonly) RACSignal *accumulateSignal;
 
-/// A @c BOOL to control whether or not accumulation is active.
+/// A @c BOOL which controls whether or not accumulation is active.
 @property (nonatomic, assign) BOOL accumulateEnabled;
 
 @end
