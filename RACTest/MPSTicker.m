@@ -55,7 +55,7 @@ static NSUInteger const kAccumulationDisabled = 0;
     return self;
 }
 
-- (id)init
+- (instancetype)init
 {
 	RACSignal *timedTickSource = [RACSignal interval:1 onScheduler:[RACScheduler scheduler]];
 	return [self initWithTickSource:timedTickSource];

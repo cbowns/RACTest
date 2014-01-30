@@ -16,9 +16,12 @@
 
 @interface MPSTicker : NSObject
 
-/// A custom initializer that allows providing of your own source of tick events,
-/// rather than using the default once-per-second timer.
+/// The designated initializer, to allow providing a tick source other than the convenient,
+/// once-per-second timer in @c init.
 - (instancetype)initWithTickSource:(RACSignal *)tickSource;
+
+/// Convenience initializer. Calls @c initWithTickSource: with a tick-once-per-second time-based signal.
+- (instancetype)init;
 
 /// A signal producing increasing NSNumbers.
 - (RACSignal *)accumulateSignal;
