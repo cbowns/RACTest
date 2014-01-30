@@ -42,11 +42,13 @@ static NSUInteger const kAccumulationDisabled = 0;
 		 If @c !self.isAccumulateEnabled, it will return the same value.
 		 */
 		@weakify(self);
-		_accumulateSignal = [_tickSignal scanWithStart:@(0) reduce:^id(NSNumber *previous, id next) {
+		_accumulateSignal = [[_tickSignal filter:^BOOL(id value) {
 			@strongify(self);
-			NSUInteger accumulation = (self.accumulateEnabled ? kAccumulationEnabled : kAccumulationDisabled);
+			return self.accumulateEnabled;
+		}] scanWithStart:@(0) reduce:^id(NSNumber *previous, id next) {
+			NSLog(@"%s accumulating.", __func__);
 			// On each tick, we add one to the previous value of the accumulate signal.
-			return @(previous.unsignedIntegerValue + accumulation);
+			return @(previous.unsignedIntegerValue + kAccumulationEnabled);
 		}];
 
 		// Accumulate by default.
