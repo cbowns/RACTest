@@ -46,7 +46,6 @@ static NSUInteger const kAccumulationDisabled = 0;
 			@strongify(self);
 			return self.accumulateEnabled;
 		}] scanWithStart:@(0) reduce:^id(NSNumber *previous, id next) {
-			NSLog(@"%s accumulating.", __func__);
 			// On each tick, we add one to the previous value of the accumulate signal.
 			return @(previous.unsignedIntegerValue + kAccumulationEnabled);
 		}];
