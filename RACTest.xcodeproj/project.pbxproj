@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		26301E9FFCDF4FA9ABA3F1A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA087152DD4100B4D0BA7C /* libPods.a */; };
-		E52E59151861246F00071D76 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E52E59141861246F00071D76 /* MPSTicker.m */; };
 		E53476281856B7DF00D02431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476271856B7DF00D02431 /* Foundation.framework */; };
 		E534762A1856B7DF00D02431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476291856B7DF00D02431 /* CoreGraphics.framework */; };
 		E534762C1856B7DF00D02431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534762B1856B7DF00D02431 /* UIKit.framework */; };
@@ -23,7 +22,11 @@
 		E53476491856B7DF00D02431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534762B1856B7DF00D02431 /* UIKit.framework */; };
 		E53476511856B7DF00D02431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E534764F1856B7DF00D02431 /* InfoPlist.strings */; };
 		E53476531856B7DF00D02431 /* RACTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E53476521856B7DF00D02431 /* RACTestTests.m */; };
-		E534765E1857ECBC00D02431 /* MPSViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E534765D1857ECBC00D02431 /* MPSViewModel.m */; };
+		E5A410E2189C7924005F5424 /* MPSTickerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E1189C7924005F5424 /* MPSTickerTest.m */; };
+		E5A410E7189C79D9005F5424 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E4189C79D9005F5424 /* MPSTicker.m */; };
+		E5A410E8189C79D9005F5424 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E4189C79D9005F5424 /* MPSTicker.m */; };
+		E5A410E9189C79D9005F5424 /* MPSViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E6189C79D9005F5424 /* MPSViewModel.m */; };
+		E5A410EA189C79D9005F5424 /* MPSViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E6189C79D9005F5424 /* MPSViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +42,6 @@
 /* Begin PBXFileReference section */
 		36AA087152DD4100B4D0BA7C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A2F6586DCD94238BF15590B /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		E52E59131861246F00071D76 /* MPSTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSTicker.h; sourceTree = "<group>"; };
-		E52E59141861246F00071D76 /* MPSTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSTicker.m; sourceTree = "<group>"; };
 		E53476241856B7DF00D02431 /* RACTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RACTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E53476271856B7DF00D02431 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E53476291856B7DF00D02431 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -60,8 +61,11 @@
 		E534764E1856B7DF00D02431 /* RACTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RACTestTests-Info.plist"; sourceTree = "<group>"; };
 		E53476501856B7DF00D02431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E53476521856B7DF00D02431 /* RACTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestTests.m; sourceTree = "<group>"; };
-		E534765C1857ECBC00D02431 /* MPSViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPSViewModel.h; sourceTree = "<group>"; };
-		E534765D1857ECBC00D02431 /* MPSViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSViewModel.m; sourceTree = "<group>"; };
+		E5A410E1189C7924005F5424 /* MPSTickerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSTickerTest.m; sourceTree = "<group>"; };
+		E5A410E3189C79D9005F5424 /* MPSTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSTicker.h; path = "Shared Components/MPSTicker.h"; sourceTree = SOURCE_ROOT; };
+		E5A410E4189C79D9005F5424 /* MPSTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSTicker.m; path = "Shared Components/MPSTicker.m"; sourceTree = SOURCE_ROOT; };
+		E5A410E5189C79D9005F5424 /* MPSViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSViewModel.h; path = "Shared Components/MPSViewModel.h"; sourceTree = SOURCE_ROOT; };
+		E5A410E6189C79D9005F5424 /* MPSViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSViewModel.m; path = "Shared Components/MPSViewModel.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,19 +96,21 @@
 		E52E5916186124DF00071D76 /* Ticker */ = {
 			isa = PBXGroup;
 			children = (
-				E52E59131861246F00071D76 /* MPSTicker.h */,
-				E52E59141861246F00071D76 /* MPSTicker.m */,
+				E5A410E3189C79D9005F5424 /* MPSTicker.h */,
+				E5A410E4189C79D9005F5424 /* MPSTicker.m */,
 			);
 			name = Ticker;
+			path = ../RACTest;
 			sourceTree = "<group>";
 		};
 		E52E5917186124E500071D76 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				E534765C1857ECBC00D02431 /* MPSViewModel.h */,
-				E534765D1857ECBC00D02431 /* MPSViewModel.m */,
+				E5A410E5189C79D9005F5424 /* MPSViewModel.h */,
+				E5A410E6189C79D9005F5424 /* MPSViewModel.m */,
 			);
 			name = ViewModel;
+			path = ../RACTest;
 			sourceTree = "<group>";
 		};
 		E52E5918186124E900071D76 /* ViewController */ = {
@@ -119,6 +125,7 @@
 		E534761B1856B7DF00D02431 = {
 			isa = PBXGroup;
 			children = (
+				E5A410E0189C78F8005F5424 /* Shared Components */,
 				E534762D1856B7DF00D02431 /* RACTest */,
 				E534764C1856B7DF00D02431 /* RACTestTests */,
 				E53476261856B7DF00D02431 /* Frameworks */,
@@ -154,8 +161,6 @@
 			children = (
 				E53476391856B7DF00D02431 /* Main.storyboard */,
 				E5CFCAA41862648D0057B420 /* App Delegate */,
-				E52E5916186124DF00071D76 /* Ticker */,
-				E52E5917186124E500071D76 /* ViewModel */,
 				E52E5918186124E900071D76 /* ViewController */,
 				E534763F1856B7DF00D02431 /* Images.xcassets */,
 				E534762E1856B7DF00D02431 /* Supporting Files */,
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				E53476521856B7DF00D02431 /* RACTestTests.m */,
+				E5A410E1189C7924005F5424 /* MPSTickerTest.m */,
 				E534764D1856B7DF00D02431 /* Supporting Files */,
 			);
 			path = RACTestTests;
@@ -190,6 +196,15 @@
 				E534764F1856B7DF00D02431 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E5A410E0189C78F8005F5424 /* Shared Components */ = {
+			isa = PBXGroup;
+			children = (
+				E52E5916186124DF00071D76 /* Ticker */,
+				E52E5917186124E500071D76 /* ViewModel */,
+			);
+			path = "Shared Components";
 			sourceTree = "<group>";
 		};
 		E5CFCAA41862648D0057B420 /* App Delegate */ = {
@@ -335,10 +350,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E53476341856B7DF00D02431 /* main.m in Sources */,
-				E534765E1857ECBC00D02431 /* MPSViewModel.m in Sources */,
+				E5A410E7189C79D9005F5424 /* MPSTicker.m in Sources */,
 				E53476381856B7DF00D02431 /* MPSAppDelegate.m in Sources */,
 				E534763E1856B7DF00D02431 /* MPSViewController.m in Sources */,
-				E52E59151861246F00071D76 /* MPSTicker.m in Sources */,
+				E5A410E9189C79D9005F5424 /* MPSViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +361,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5A410E2189C7924005F5424 /* MPSTickerTest.m in Sources */,
 				E53476531856B7DF00D02431 /* RACTestTests.m in Sources */,
+				E5A410E8189C79D9005F5424 /* MPSTicker.m in Sources */,
+				E5A410EA189C79D9005F5424 /* MPSViewModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
