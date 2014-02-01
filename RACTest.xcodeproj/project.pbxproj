@@ -265,11 +265,6 @@
 				CLASSPREFIX = MPS;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Mechanical Pants";
-				TargetAttributes = {
-					E53476441856B7DF00D02431 = {
-						TestTargetID = E53476231856B7DF00D02431;
-					};
-				};
 			};
 			buildConfigurationList = E534761F1856B7DF00D02431 /* Build configuration list for PBXProject "RACTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -510,7 +505,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RACTest.app/RACTest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -524,7 +518,6 @@
 				);
 				INFOPLIST_FILE = "RACTestTests/RACTestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -533,7 +526,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RACTest.app/RACTest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -543,7 +535,6 @@
 				GCC_PREFIX_HEADER = "RACTest/RACTest-Prefix.pch";
 				INFOPLIST_FILE = "RACTestTests/RACTestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
