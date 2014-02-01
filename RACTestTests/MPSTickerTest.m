@@ -50,4 +50,15 @@
 	XCTAssertTrue([[tickSignal class] isSubclassOfClass:[RACSignal class]], @"Accumulate signal should be a RACSignal.");
 }
 
+- (void)testControlledTick
+{
+	NSUInteger firstValue = 0;
+	RACSubject *controlledTick = [[RACSubject subject] startWith:@(firstValue)];
+	MPSTicker *ticker = [[MPSTicker alloc] initWithTickSource:controlledTick];
+	[[ticker.accumulateSignal take:1] subscribeNext:^(NSNumber *number) {
+		XCTAssertNotNil(number, @"Signal should not return a nil value.");
+		XCTAssertEqualObjects(number, @(firstValue + 1), @"Signal should return a value equal to firstValue plus one.");
+	}];
+}
+
 @end
