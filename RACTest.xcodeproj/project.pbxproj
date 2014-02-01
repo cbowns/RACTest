@@ -21,7 +21,6 @@
 		E53476481856B7DF00D02431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476271856B7DF00D02431 /* Foundation.framework */; };
 		E53476491856B7DF00D02431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534762B1856B7DF00D02431 /* UIKit.framework */; };
 		E53476511856B7DF00D02431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E534764F1856B7DF00D02431 /* InfoPlist.strings */; };
-		E53476531856B7DF00D02431 /* RACTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E53476521856B7DF00D02431 /* RACTestTests.m */; };
 		E5A410E2189C7924005F5424 /* MPSTickerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E1189C7924005F5424 /* MPSTickerTest.m */; };
 		E5A410E7189C79D9005F5424 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E4189C79D9005F5424 /* MPSTicker.m */; };
 		E5A410E8189C79D9005F5424 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E4189C79D9005F5424 /* MPSTicker.m */; };
@@ -60,7 +59,6 @@
 		E53476461856B7DF00D02431 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E534764E1856B7DF00D02431 /* RACTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RACTestTests-Info.plist"; sourceTree = "<group>"; };
 		E53476501856B7DF00D02431 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E53476521856B7DF00D02431 /* RACTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestTests.m; sourceTree = "<group>"; };
 		E5A410E1189C7924005F5424 /* MPSTickerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPSTickerTest.m; sourceTree = "<group>"; };
 		E5A410E3189C79D9005F5424 /* MPSTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSTicker.h; path = "Shared Components/MPSTicker.h"; sourceTree = SOURCE_ROOT; };
 		E5A410E4189C79D9005F5424 /* MPSTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSTicker.m; path = "Shared Components/MPSTicker.m"; sourceTree = SOURCE_ROOT; };
@@ -182,7 +180,6 @@
 		E534764C1856B7DF00D02431 /* RACTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				E53476521856B7DF00D02431 /* RACTestTests.m */,
 				E5A410E1189C7924005F5424 /* MPSTickerTest.m */,
 				E534764D1856B7DF00D02431 /* Supporting Files */,
 			);
@@ -265,6 +262,11 @@
 				CLASSPREFIX = MPS;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Mechanical Pants";
+				TargetAttributes = {
+					E53476441856B7DF00D02431 = {
+						TestTargetID = E53476231856B7DF00D02431;
+					};
+				};
 			};
 			buildConfigurationList = E534761F1856B7DF00D02431 /* Build configuration list for PBXProject "RACTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -357,7 +359,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5A410E2189C7924005F5424 /* MPSTickerTest.m in Sources */,
-				E53476531856B7DF00D02431 /* RACTestTests.m in Sources */,
 				E5A410E8189C79D9005F5424 /* MPSTicker.m in Sources */,
 				E5A410EA189C79D9005F5424 /* MPSViewModel.m in Sources */,
 			);
@@ -503,8 +504,10 @@
 		};
 		E534765A1856B7DF00D02431 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A2F6586DCD94238BF15590B /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RACTest.app/RACTest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -518,14 +521,17 @@
 				);
 				INFOPLIST_FILE = "RACTestTests/RACTestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
 		E534765B1856B7DF00D02431 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A2F6586DCD94238BF15590B /* Pods.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RACTest.app/RACTest";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -535,6 +541,7 @@
 				GCC_PREFIX_HEADER = "RACTest/RACTest-Prefix.pch";
 				INFOPLIST_FILE = "RACTestTests/RACTestTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
