@@ -43,8 +43,8 @@
 
 - (void)testDesignatedInitializer
 {
-	RACSignal *controlledTick = [[RACSignal alloc] startWith:@(0)];
-	MPSTicker *ticker = [[MPSTicker alloc] initWithTickSource:controlledTick];
+	RACSignal *customTick = [[RACSignal alloc] startWith:@(0)];
+	MPSTicker *ticker = [[MPSTicker alloc] initWithTickSource:customTick];
 	RACSignal *tickSignal = ticker.accumulateSignal;
 	XCTAssertNotNil(tickSignal, @"Accumulate signal should be an object");
 	XCTAssertTrue([[tickSignal class] isSubclassOfClass:[RACSignal class]], @"Accumulate signal should be a RACSignal.");
