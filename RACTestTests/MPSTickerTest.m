@@ -66,7 +66,7 @@
 		XCTAssertTrue(success, @"Signal failed to return a value. Error: %@", error);
 	} else {
 		XCTAssertNotNil(value, @"Signal returned a nil value.");
-		XCTAssertEqualObjects(@(firstValue), value, @"Signal returned an unexpected value.");
+		XCTAssertEqualObjects(@(firstValue), value, @"Signal returned an unexpected value of %@, should be %i", value, firstValue);
 	}
 }
 
