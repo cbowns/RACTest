@@ -50,15 +50,24 @@
 	XCTAssertTrue([[tickSignal class] isSubclassOfClass:[RACSignal class]], @"Accumulate signal should be a RACSignal.");
 }
 
-- (void)testControlledTick
+- (void)testFirstTickValue
 {
-	NSUInteger firstValue = 0;
-	RACSubject *controlledTick = [[RACSubject subject] startWith:@(firstValue)];
-	MPSTicker *ticker = [[MPSTicker alloc] initWithTickSource:controlledTick];
-	[[ticker.accumulateSignal take:1] subscribeNext:^(NSNumber *number) {
-		XCTAssertNotNil(number, @"Signal should not return a nil value.");
-		XCTAssertEqualObjects(number, @(firstValue + 1), @"Signal should return a value equal to firstValue plus one.");
-	}];
+	// Create a custom tick with one value to send.
+	NSUInteger firstValue = 1;
+	RACSignal *customTick = [[@[@(firstValue)] rac_sequence] signal];
+	MPSTicker *ticker = [[MPSTicker alloc] initWithTickSource:customTick];
+
+	// Manually subscribe to verify we got back the value we expected.
+	// (It should be one accumulated value.)
+	BOOL success = NO;
+	NSError *error = nil;
+	id value = [ticker.accumulateSignal asynchronousFirstOrDefault:nil success:&success error:&error];
+	if (!success) {
+		XCTAssertTrue(success, @"Signal failed to return a value. Error: %@", error);
+	} else {
+		XCTAssertNotNil(value, @"Signal returned a nil value.");
+		XCTAssertEqualObjects(@(firstValue), value, @"Signal returned an unexpected value.");
+	}
 }
 
 @end
