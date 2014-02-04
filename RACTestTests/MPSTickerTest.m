@@ -70,4 +70,22 @@
 	}
 }
 
+/// Tests the default ticker's built-in timer.
+/// This test takes a second to run as a result.
+- (void)testTimerAccumulatingTicks
+{
+	NSUInteger firstValue = 1;
+	MPSTicker *ticker = [[MPSTicker alloc] init];
+
+	BOOL success = NO;
+	NSError *error = nil;
+	id value = [ticker.accumulateSignal asynchronousFirstOrDefault:nil success:&success error:&error];
+	if (!success) {
+		XCTAssertTrue(success, @"Signal failed to return a value. Error: %@", error);
+	} else {
+		XCTAssertNotNil(value, @"Signal returned a nil value.");
+		XCTAssertEqualObjects(@(firstValue), value, @"Signal returned an unexpected value of %@, should be %i", value, firstValue);
+	}
+}
+
 @end
