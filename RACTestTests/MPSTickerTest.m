@@ -54,7 +54,7 @@
 {
 	// Create a custom tick with one value to send.
 	NSUInteger firstValue = 1;
-	RACSignal *customTick = [[@[@(firstValue)] rac_sequence] signal];
+	RACSignal *customTick = [RACSignal return:@(firstValue)];
 	MPSTicker *ticker = [[MPSTicker alloc] initWithTickSource:customTick];
 
 	// Manually subscribe to verify we got back the value we expected.
