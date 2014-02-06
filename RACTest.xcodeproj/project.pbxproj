@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E33FCB4A252414B9F66F321 /* libPods-RACTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0E4A3A4C7E4934B8685A76 /* libPods-RACTestTests.a */; };
-		26301E9FFCDF4FA9ABA3F1A4 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36AA087152DD4100B4D0BA7C /* libPods.a */; };
 		9007959B703643EFBFF89E8F /* libPods-RACTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A4B45DC251421EA16D5EE3 /* libPods-RACTest.a */; };
 		E53476281856B7DF00D02431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476271856B7DF00D02431 /* Foundation.framework */; };
 		E534762A1856B7DF00D02431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476291856B7DF00D02431 /* CoreGraphics.framework */; };
@@ -81,7 +80,6 @@
 				E534762A1856B7DF00D02431 /* CoreGraphics.framework in Frameworks */,
 				E534762C1856B7DF00D02431 /* UIKit.framework in Frameworks */,
 				E53476281856B7DF00D02431 /* Foundation.framework in Frameworks */,
-				26301E9FFCDF4FA9ABA3F1A4 /* libPods.a in Frameworks */,
 				9007959B703643EFBFF89E8F /* libPods-RACTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
