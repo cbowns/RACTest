@@ -8,6 +8,8 @@
 
 #import "MPSAppDelegate.h"
 
+#import <Mantle/Mantle.h>
+
 @implementation MPSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
