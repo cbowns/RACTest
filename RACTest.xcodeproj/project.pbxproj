@@ -64,6 +64,7 @@
 		E5A410E4189C79D9005F5424 /* MPSTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSTicker.m; path = "Shared Components/MPSTicker.m"; sourceTree = SOURCE_ROOT; };
 		E5A410E5189C79D9005F5424 /* MPSViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MPSViewModel.h; path = "Shared Components/MPSViewModel.h"; sourceTree = SOURCE_ROOT; };
 		E5A410E6189C79D9005F5424 /* MPSViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MPSViewModel.m; path = "Shared Components/MPSViewModel.m"; sourceTree = SOURCE_ROOT; };
+		E5E4AF8318A3156F003F1253 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +130,7 @@
 				E53476261856B7DF00D02431 /* Frameworks */,
 				E53476251856B7DF00D02431 /* Products */,
 				5A2F6586DCD94238BF15590B /* Pods.xcconfig */,
+				E5E4AF8318A3156F003F1253 /* Warnings.xcconfig */,
 			);
 			sourceTree = "<group>";
 			usesTabs = 1;
@@ -404,6 +406,7 @@
 /* Begin XCBuildConfiguration section */
 		E53476541856B7DF00D02431 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E4AF8318A3156F003F1253 /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
@@ -443,6 +446,7 @@
 		};
 		E53476551856B7DF00D02431 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5E4AF8318A3156F003F1253 /* Warnings.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";

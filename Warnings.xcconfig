@@ -1,0 +1,127 @@
+//
+//  Hard.xcconfig
+//
+//  Created by Christopher Bowns on 3/30/13.
+//  Copyright (c) 2013 Mechanical Pants. All rights reserved.
+//
+
+// From Peter Hosey's blog: http://boredzo.org/blog/archives/2009-11-07/warnings
+
+// Check for switch coverage.
+// Combine with enumerated types for switch() for fun and profit. http://speirs.org/blog/2008/10/11/a-technique-for-using-uitableview-and-retaining-your-sanity.html
+// Defaulted to on.
+GCC_WARN_CHECK_SWITCH_STATEMENTS = YES
+
+// Warn whenever a local variable shadows another local variable, parameter or global variable or whenever a built-in function is shadowed.
+GCC_WARN_SHADOW = YES
+
+// Warn if a value is implicitly converted from a 64 bit type to a 32 bit type.
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES
+
+// Causes warnings to be emitted when a function with a defined return type (not void) contains a return statement without a return-value. Also emits a warning when a function is defined without specifying a return type.
+GCC_WARN_ABOUT_RETURN_TYPE = YES
+
+// Warn about missing braces/parens.
+// Defaulted to on.
+GCC_WARN_MISSING_PARENTHESES = YES
+
+// Warn if a structure's initializer has some fields missing.
+GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES
+
+// Warn when a source file does not end with a newline.
+GCC_WARN_ABOUT_MISSING_NEWLINE = YES
+
+// Warn when a comparison between signed and unsigned values could produce an incorrect result when the signed value is converted to unsigned.
+GCC_WARN_SIGN_COMPARE = YES
+
+// Check calls to printf and scanf, etc., to make sure that the arguments supplied have types appropriate to the format string specified, and that the conversions specified in the format string make sense.
+// Defaulted to on.
+GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES
+
+// Make sure your selectors are in scope. You wouldn't blindly call a method and just "trust" that you got it right, so why do that with @selector?
+GCC_WARN_UNDECLARED_SELECTOR = YES
+
+// Warn whenever a static function is declared but not defined or a non-inline static function is unused.
+GCC_WARN_UNUSED_FUNCTION = YES
+
+// Warn whenever a label is declared but not used.
+GCC_WARN_UNUSED_LABEL = YES
+
+// Warn whenever a function parameter is unused aside from its declaration.
+//GCC_WARN_UNUSED_PARAMETER = YES
+
+// Warn whenever a local variable or non-constant static variable is unused aside from its declaration.
+GCC_WARN_UNUSED_VARIABLE = YES
+
+// Clang:
+// Documentation: make sure Doxygen docs match method declarations.
+CLANG_WARN_DOCUMENTATION_COMMENTS = YES
+
+// Warn about implicit integer conversions that change the signedness of an integer value.
+CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES
+
+// Warn about various implicit conversions that can lose information or are otherwise suspicious.
+CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES
+
+// Warn if an Objective-C class either subclasses a deprecated class or overrides a method that has been marked deprecated.
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES
+
+// Warn about implicit ownership types on Objective-C object references as out parameters.  For example, declaring a parameter with type 'NSObject**' will produce a warning because the compiler will assume that the out parameter's ownership type is '__autoreleasing'.
+CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES
+
+// Warn about implicit retains of 'self' within blocks, which can create a retain-cycle.
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES
+
+// Warn if multiple methods of different types for the same selector are found during compilation.  The check is performed on the list of methods in the final stage of compilation.  Additionally, a check is performed for each selector appearing in a "@selector(...)"  expression, and a corresponding method for that selector has been found during compilation.  Because these checks scan the method table only at the end of compilation, these warnings are not produced if the final stage of compilation is not reached, for example because an error is found during compilation, or because the -fsyntax-only option is being used.
+GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES
+
+// Warn if multiple methods with differing argument and/or return types are found for a given selector when attempting to send a message using this selector to a receiver of type "id" or "Class".  When this setting is disabled, the compiler will omit such warnings if any differences found are confined to types which share the same size and alignment.
+GCC_WARN_STRICT_SELECTOR_MATCH = YES
+
+// Warn about implicit ownership types on Objective-C object references as out parameters.  For example, declaring a parameter with type 'NSObject**' will produce a warning because the compiler will assume that the out parameter's ownership type is '__autoreleasing'.
+CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES
+
+
+// From Nextdoor:
+
+// Warn if an aggregate or union initializer is not fully bracketed.
+GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES
+
+// Causes warnings to be emitted about missing prototypes.
+GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES
+
+// Be tough on pointer types.
+// Enabling this option causes warnings about incompatible pointer types to be treated as errors.
+GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES
+
+// Causes warnings about missing function prototypes to be treated as errors.  Only applies to C and Objective-C.
+GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES
+
+// Warn about four-char literals (e.g., MacOS-style OSTypes: 'APPL').
+GCC_WARN_FOUR_CHARACTER_CONSTANTS = YES
+
+// Warn when a #pragma directive is encountered which is not understood by GCC.  If this command line option is used, warnings will even be issued for unknown pragmas in system header files.
+GCC_WARN_UNKNOWN_PRAGMAS = YES
+
+// This is on by default nowadays:
+// Warn about implicit conversions between pointers and integers.  For example, this can catch issues when one incorrectly intermixes using NSNumber*'s and raw integers.
+CLANG_WARN_INT_CONVERSION = YES
+
+// Warn about @property declarations that are implicitly atomic.
+CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES
+
+
+// From http://useyourloaf.com/blog/2013/03/03/xcode-4-dot-6-recommended-build-settings.html
+// Warn about implicit conversions of constant values that cause the constant value to change, either through a loss of precision, or entirely in its meaning.
+CLANG_WARN_CONSTANT_CONVERSION = YES;
+
+// Warn about implicit conversions between different kinds of enum values. For example, this can catch issues when using the wrong enum flag as an argument to a function or method. 
+CLANG_WARN_ENUM_CONVERSION = YES;
+
+// CLANG_WARN_INT_CONVERSION = YES; // On via Nextdoor section
+
+// Warn about declaring the same method more than once within the same @interface.
+CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+
+// Empty Loop Bodies: Warn about loop bodies that are suspiciously empty. 
+CLANG_WARN_EMPTY_BODY = YES;
