@@ -1,0 +1,105 @@
+  Already up-to-date.
+
+Finding Podfile changes
+  - Mantle
+  - ReactiveCocoa
+
+Resolving dependencies of `Podfile`
+Resolving dependencies for target `Pods' (iOS 7.0)
+Resolving dependencies for target `RACTestTests' (iOS 7.0)
+  - ReactiveCocoa (= 2.2.3)
+    - ReactiveCocoa/no-arc
+    - ReactiveCocoa/Core
+      - ReactiveCocoa/no-arc
+Resolving dependencies for target `RACTest' (iOS 7.0)
+  - ReactiveCocoa (= 2.2.3)
+    - ReactiveCocoa/no-arc
+    - ReactiveCocoa/Core
+      - ReactiveCocoa/no-arc
+  - Mantle (= 1.3.1)
+    - Mantle/extobjc
+
+Comparing resolved specification to the sandbox manifest
+  A Mantle
+  - ReactiveCocoa
+
+Downloading dependencies
+
+-> Installing Mantle (1.3.1)
+ > GitHub download
+   $ /usr/local/bin/git config core.bare
+   true
+   $ /usr/local/bin/git config core.bare
+   true
+ > Updating cache git repo (/Users/cbowns/Library/Caches/CocoaPods/GitHub/a7c41d0c21b511276199ca7c6615dadde050fbe7)
+     $ /usr/local/bin/git remote update
+     Fetching origin
+     From https://github.com/github/Mantle
+        837bdd5..cf3bb6e  refs/pull/230/head -> refs/pull/230/head
+      + 159062a...c353005 refs/pull/230/merge -> refs/pull/230/merge  (forced update)
+ > Cloning to Pods folder
+     $ /usr/local/bin/git clone "/Users/cbowns/Library/Caches/CocoaPods/GitHub/a7c41d0c21b511276199ca7c6615dadde050fbe7" "/Users/cbowns/Development/RACTest/Pods/Mantle"
+     Cloning into '/Users/cbowns/Development/RACTest/Pods/Mantle'...
+     done.
+   $ /usr/local/bin/git fetch origin tags/1.3.1 2>&1
+   From /Users/cbowns/Library/Caches/CocoaPods/GitHub/a7c41d0c21b511276199ca7c6615dadde050fbe7
+    * tag               1.3.1      -> FETCH_HEAD
+   $ /usr/local/bin/git reset --hard FETCH_HEAD
+   HEAD is now at 6cbdbeb Xcode lulz
+   $ /usr/local/bin/git checkout -b activated-pod-commit 2>&1
+   Switched to a new branch 'activated-pod-commit'
+
+-> Using ReactiveCocoa (2.2.3)
+  - Running pre install hooks
+
+Generating Pods project
+  - Creating Pods project
+  - Adding source files to Pods project
+  - Adding frameworks to Pods project
+  - Adding libraries to Pods project
+  - Adding resources to Pods project
+  - Linking headers
+  - Installing libraries
+    - Installing target `Pods-RACTest-Mantle` iOS 7.0
+      - Adding Build files
+      - Adding resource bundles to Pods project
+      - Generating public xcconfig file at `Pods/Pods-RACTest-Mantle.xcconfig`
+      - Generating private xcconfig file at `Pods/Pods-RACTest-Mantle-Private.xcconfig`
+      - Generating prefix header at `Pods/Pods-RACTest-Mantle-prefix.pch`
+      - Generating dummy source file at `Pods/Pods-RACTest-Mantle-dummy.m`
+    - Installing target `Pods-RACTest-ReactiveCocoa` iOS 7.0
+      - Adding Build files
+      - Adding resource bundles to Pods project
+      - Generating public xcconfig file at `Pods/Pods-RACTest-ReactiveCocoa.xcconfig`
+      - Generating private xcconfig file at `Pods/Pods-RACTest-ReactiveCocoa-Private.xcconfig`
+      - Generating prefix header at `Pods/Pods-RACTest-ReactiveCocoa-prefix.pch`
+      - Generating dummy source file at `Pods/Pods-RACTest-ReactiveCocoa-dummy.m`
+    - Installing target `Pods-RACTestTests-ReactiveCocoa` iOS 7.0
+      - Adding Build files
+      - Adding resource bundles to Pods project
+      - Generating public xcconfig file at `Pods/Pods-RACTestTests-ReactiveCocoa.xcconfig`
+      - Generating private xcconfig file at `Pods/Pods-RACTestTests-ReactiveCocoa-Private.xcconfig`
+      - Generating prefix header at `Pods/Pods-RACTestTests-ReactiveCocoa-prefix.pch`
+      - Generating dummy source file at `Pods/Pods-RACTestTests-ReactiveCocoa-dummy.m`
+    - Installing target `Pods-RACTest` iOS 7.0
+      - Generating xcconfig file at `Pods/Pods-RACTest.xcconfig`
+      - Generating target environment header at `Pods/Pods-RACTest-environment.h`
+      - Generating copy resources script at `Pods/Pods-RACTest-resources.sh`
+      - Generating acknowledgements at `Pods/Pods-RACTest-acknowledgements.plist`
+      - Generating acknowledgements at `Pods/Pods-RACTest-acknowledgements.markdown`
+      - Generating dummy source file at `Pods/Pods-RACTest-dummy.m`
+    - Installing target `Pods-RACTestTests` iOS 7.0
+      - Generating xcconfig file at `Pods/Pods-RACTestTests.xcconfig`
+      - Generating target environment header at `Pods/Pods-RACTestTests-environment.h`
+      - Generating copy resources script at `Pods/Pods-RACTestTests-resources.sh`
+      - Generating acknowledgements at `Pods/Pods-RACTestTests-acknowledgements.plist`
+      - Generating acknowledgements at `Pods/Pods-RACTestTests-acknowledgements.markdown`
+      - Generating dummy source file at `Pods/Pods-RACTestTests-dummy.m`
+  - Running post install hooks
+  - Writing Xcode project file to `Pods/Pods.xcodeproj`
+  - Writing Lockfile in `Podfile.lock`
+  - Writing Manifest in `Pods/Manifest.lock`
+
+Integrating client project
+[Sli-m:~/Development/RACTest] ☺  broken-cocoapods 1ecf76c ✗
+cbowns%                                                                                                                                                     [13:45:34 on 2014-02-06]
