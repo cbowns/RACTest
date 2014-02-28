@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75ABC4ACD2944A208BB2C0CA /* libPods-RACTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0E4A3A4C7E4934B8685A76 /* libPods-RACTestTests.a */; };
 		9007959B703643EFBFF89E8F /* libPods-RACTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A4B45DC251421EA16D5EE3 /* libPods-RACTest.a */; };
 		E53476281856B7DF00D02431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476271856B7DF00D02431 /* Foundation.framework */; };
 		E534762A1856B7DF00D02431 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476291856B7DF00D02431 /* CoreGraphics.framework */; };
@@ -95,6 +96,7 @@
 				E53476471856B7DF00D02431 /* XCTest.framework in Frameworks */,
 				E53476491856B7DF00D02431 /* UIKit.framework in Frameworks */,
 				E53476481856B7DF00D02431 /* Foundation.framework in Frameworks */,
+				75ABC4ACD2944A208BB2C0CA /* libPods-RACTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
