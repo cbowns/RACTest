@@ -22,7 +22,6 @@
 		E53476481856B7DF00D02431 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53476271856B7DF00D02431 /* Foundation.framework */; };
 		E53476491856B7DF00D02431 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E534762B1856B7DF00D02431 /* UIKit.framework */; };
 		E53476511856B7DF00D02431 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E534764F1856B7DF00D02431 /* InfoPlist.strings */; };
-		E55D721618C016A4005394D5 /* libPods-RACTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E55D721518C016A4005394D5 /* libPods-RACTest.a */; };
 		E5A410E2189C7924005F5424 /* MPSTickerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E1189C7924005F5424 /* MPSTickerTest.m */; };
 		E5A410E7189C79D9005F5424 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E4189C79D9005F5424 /* MPSTicker.m */; };
 		E5A410E8189C79D9005F5424 /* MPSTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = E5A410E4189C79D9005F5424 /* MPSTicker.m */; };
@@ -92,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E55D721618C016A4005394D5 /* libPods-RACTest.a in Frameworks */,
 				E53476471856B7DF00D02431 /* XCTest.framework in Frameworks */,
 				E53476491856B7DF00D02431 /* UIKit.framework in Frameworks */,
 				E53476481856B7DF00D02431 /* Foundation.framework in Frameworks */,
